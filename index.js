@@ -13,4 +13,6 @@ app.listen(3000, () => {
 });
 await initMongoDB();
 
-app.use('/', mainRouter);
+app.use('/', (req,res) => {
+    res.json('hola');
+}  );
