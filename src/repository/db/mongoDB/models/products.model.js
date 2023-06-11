@@ -8,7 +8,6 @@ export const productsSchema = new mongoose.Schema({
     name: { type: String, required: true },
     principalPrice: { type: Number, required: true },
     price: { type: Number, required: true },
-    thumbnail: { type: String, required: true },
     stock: { type: Number, required: true },
     stockPrice: { type: Number, required: true },
 
@@ -46,15 +45,16 @@ class ProductsModel extends MongoDB {
         try {
             let addedProducts = [];
             for (const product of products) {
+                const { name, principalPrice, stockPrice } = product;
+
+                
 
 
-                const { name, principalPrice, price, thumbnail, stock, stockPrice } = product;
                 const newProduct = await this.collection.create({
                     name,
                     principalPrice,
-                    price,
-                    thumbnail,
-                    stock,
+                    price: principalPrice,
+                    stock: stockPrice,
                     stockPrice,
                 });
 
