@@ -12,7 +12,9 @@ app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use(cors());
+app.use(cors({
+    origin: 'http://127.0.0.1:5501'
+}));
 
 
 // eslint-disable-next-line no-undef
