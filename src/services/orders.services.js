@@ -15,7 +15,7 @@ export const createOrder =  async ({items, form}) => {
         const restCount = (parseInt(item.stockPrice) - parseInt(item.stock)); 
         const percentage=  (restCount/ item.stockPrice) * 100;
         const newPrice = item.price +(item.price *percentage/100); 
-        const newStock = item.stock - item.quantity;
+        const newStock = item.stock - 1;
 
 
         const update= {
