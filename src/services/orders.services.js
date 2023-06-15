@@ -7,7 +7,7 @@ const orders = OrdersModel;
  
 
 export const createOrder =  async ({items, form}) => {
-    
+    console.log(items, form);
     const data = await orders.createOrders(items, form);
 
 

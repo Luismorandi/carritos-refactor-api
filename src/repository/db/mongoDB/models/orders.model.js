@@ -19,11 +19,12 @@ class OrdersModel extends MongoDB {
         super(collection, schema);
     }
 
-    async createOrders(products, form) {
+    async createOrders(items, form) {
         const {email, name, lastName, adress} = form;
+        console.log('pase');
         try {
             const newOrder = await this.collection.create({
-                products, 
+                items, 
                 email,
                 name,
                 lastName,

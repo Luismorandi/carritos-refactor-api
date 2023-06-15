@@ -5,6 +5,7 @@ class Orders {
 
     }
     async createOrder(req, res) {
+        console.log(req.body);
         const data = await createOrder(req.body);
         return res.json(data);
     }
